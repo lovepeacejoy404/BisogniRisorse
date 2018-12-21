@@ -444,6 +444,7 @@ public class JPanelAnagrafica extends JPanel{
 	 		txtEmail.setText(rs.getString(11));
 	 		txtNote.setText(rs.getString(12));
 	 		txtIDRisorse.setText(rs.getString(13));
+	 		txtSesso.setText(rs.getString(14));
 	 		uncheckedLists();
 	 		
 	 		

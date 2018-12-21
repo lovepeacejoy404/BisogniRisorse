@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Fri Mar 14 09:30:53 CET 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0144-bfb7-1dab-000001408f38 
-on database directory /Users/gian/Documents/workspace2/RilevazioneDati/DB with class loader sun.misc.Launcher$AppClassLoader@6471d768 
-Loaded from file:/Users/gian/Documents/workspace2/RilevazioneDati/lib/derby.jar
+Thu Dec 20 19:07:08 CET 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0167-cccc-b87e-000007825600 
+on database directory /home/gian/Documenti/eclipse-workspace/RilevazioneDati/DB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4b85612c 
+Loaded from file:/home/gian/Documenti/eclipse-workspace/RilevazioneDati/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_51-b13
-user.dir=/Users/gian/Documents/workspace2/RilevazioneDati
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.7.5
+java.runtime.version=11.0.1+13-LTS
+user.dir=/home/gian/Documenti/eclipse-workspace/RilevazioneDati
+os.name=Linux
+os.arch=amd64
+os.version=4.15.0-42-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
