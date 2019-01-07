@@ -24,10 +24,10 @@ public JPanelPrincipale() {
 	panelBisogniRisorse = new JPanelBisogniRisorse();
 	panelImporta = new JPanelImporta();
 	
-	panelTab.addTab("Anagrafica",panelAnagrafica); 
-	panelTab.addTab("Bisogni e Risorse",panelBisogniRisorse); 
-	panelTab.addTab("Risorse soddisfacenti bisogni degli utenti",panelRisorseSoddisf); 
-	panelTab.addTab("Importa/Esporta",panelImporta); 
+	panelTab.addTab(Messages.getString("JPanelPrincipale.0"),panelAnagrafica);  //$NON-NLS-1$
+	panelTab.addTab(Messages.getString("JPanelPrincipale.1"),panelBisogniRisorse);  //$NON-NLS-1$
+	panelTab.addTab(Messages.getString("JPanelPrincipale.2"),panelRisorseSoddisf);  //$NON-NLS-1$
+	panelTab.addTab(Messages.getString("JPanelPrincipale.3"),panelImporta);  //$NON-NLS-1$
 	add(panelTab,BorderLayout.CENTER);
 	
 }

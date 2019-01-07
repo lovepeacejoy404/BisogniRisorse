@@ -43,7 +43,7 @@ public class FramePrincipale extends JFrame{
 	public FramePrincipale() {
 			
 		super();
-		setTitle("Rilevazione Dati Bisogni e Risorse");
+		setTitle(Messages.getString("FramePrincipale.0")); //$NON-NLS-1$
     	JPanelPrincipale panel1 = new JPanelPrincipale();
     	getContentPane().add(panel1, BorderLayout.CENTER);
     	pack();

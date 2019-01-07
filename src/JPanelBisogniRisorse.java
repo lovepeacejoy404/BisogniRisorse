@@ -44,13 +44,13 @@ public class JPanelBisogniRisorse extends JPanel{
 		JButton bNuovo,bSalva,bCancella,buttonLicenza;
 		JPanel panelX2 = new JPanel();
 		panelX2.setLayout(new BoxLayout(panelX2,BoxLayout.X_AXIS));
-		panelX2.add(bNuovo=new JButton("Nuovo",new ImageIcon("images/pulsanti/New24.gif")));
+		panelX2.add(bNuovo=new JButton(Messages.getString("JPanelBisogniRisorse.0"),new ImageIcon("images/pulsanti/New24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 		bNuovo.addActionListener(actionListenerbNuovo);	
 		panelX2.add(Box.createHorizontalStrut(10));
-		panelX2.add(bSalva=new JButton("Salva",new ImageIcon("images/pulsanti/Save24.gif")));
+		panelX2.add(bSalva=new JButton(Messages.getString("JPanelBisogniRisorse.2"),new ImageIcon("images/pulsanti/Save24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 		bSalva.addActionListener(actionListenerbSalva);
 		panelX2.add(Box.createHorizontalStrut(10));
-		panelX2.add(bCancella=new JButton("Cancella",new ImageIcon("images/pulsanti/Delete24.gif")));
+		panelX2.add(bCancella=new JButton(Messages.getString("JPanelBisogniRisorse.4"),new ImageIcon("images/pulsanti/Delete24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 		bCancella.addActionListener(actionListenerbCancella);
 		panelX2.add(Box.createHorizontalStrut(10));
 		add(panelX2);
@@ -59,7 +59,7 @@ public class JPanelBisogniRisorse extends JPanel{
 		panelX1.setLayout(new BoxLayout(panelX1,BoxLayout.X_AXIS));
 		panelX1.add(Box.createHorizontalStrut(10));
 		panelX1.add(comboScelta=new JComboBox(new String[]{
-				"Bisogni","Risorse"
+				Messages.getString("JPanelBisogniRisorse.6"),Messages.getString("JPanelBisogniRisorse.7") //$NON-NLS-1$ //$NON-NLS-2$
 		}));
 		
 		panelX1.add(Box.createHorizontalStrut(10));
@@ -78,10 +78,10 @@ public class JPanelBisogniRisorse extends JPanel{
 		panelX0 = new JPanel();
 		panelX0.setLayout(new BoxLayout(panelX0,BoxLayout.X_AXIS));
 		panelX0.setBorder(BorderFactory.createTitledBorder(border4,
-	  			"Bisogni e Risorse dell'utente:",TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174))); 
+	  			Messages.getString("JPanelBisogniRisorse.8"),TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174)));  //$NON-NLS-1$ //$NON-NLS-2$
 		
 		panelX0.add(Box.createHorizontalStrut(10));
-		panelX0.add(new JLabel("Bisogni:"));
+		panelX0.add(new JLabel(Messages.getString("JPanelBisogniRisorse.10"))); //$NON-NLS-1$
 		panelX0.add(Box.createHorizontalStrut(10));
 		Vector<CheckListItem> v = new Vector<CheckListItem>();
 		for (String s:DBadapter.getBisogni(false))
@@ -93,7 +93,7 @@ public class JPanelBisogniRisorse extends JPanel{
 		JListBisogni.addMouseListener(CheckListItem.ma);	
 		panelX0.add(Box.createHorizontalStrut(10));
 		
-		panelX0.add(new JLabel("Risorse :"));
+		panelX0.add(new JLabel(Messages.getString("JPanelBisogniRisorse.11"))); //$NON-NLS-1$
 		panelX0.add(Box.createHorizontalStrut(10));
 		Vector<CheckListItem> v1 = new Vector<CheckListItem>();
 		for (String s:DBadapter.getRisorse(false))
@@ -111,33 +111,33 @@ public class JPanelBisogniRisorse extends JPanel{
 	 ActionListener actionListenerbNuovo =new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
 				isNuovo=true;
-				txtNome.setText("");
+				txtNome.setText(""); //$NON-NLS-1$
 			}
 		};
 		
 		ActionListener actionListenerbCancella =new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
-				int result =JOptionPane.showConfirmDialog(null,"Sei sicuro di volere cancellare il bisogno o la risorsa,\n " +
-						"selezionato in base al menù a tendina 'Bisogno o Risorsa' ? ");
+				int result =JOptionPane.showConfirmDialog(null,Messages.getString("JPanelBisogniRisorse.13") + //$NON-NLS-1$
+						Messages.getString("JPanelBisogniRisorse.14")); //$NON-NLS-1$
 				if (result==JOptionPane.YES_OPTION) {
 					CheckListItem nome;
 					if (comboScelta.getSelectedIndex()==0){
 						nome=((CheckListItem)JListBisogni.getSelectedValue());
 						if (nome==null) {
-							txtNome.setText("Nessun bisogno selezionato da cancellare");
+							txtNome.setText(Messages.getString("JPanelBisogniRisorse.15")); //$NON-NLS-1$
 							return;
 						}
 						remove(panelX0);
-						DBadapter.deleteItemBisognoRisorsa(true, nome.toString().split("-")[0]);
+						DBadapter.deleteItemBisognoRisorsa(true, nome.toString().split("-")[0]); //$NON-NLS-1$
 						JPanelAnagrafica.setJLists(JPanelAnagrafica.AGGIORNA, JPanelAnagrafica.RICERCA_BISOGNI);
 					} else {
 						nome=((CheckListItem)JListRisorse.getSelectedValue());
 						if (nome==null) {
-							txtNome.setText("Nessuna risorsa selezionata da cancellare");
+							txtNome.setText(Messages.getString("JPanelBisogniRisorse.17")); //$NON-NLS-1$
 							return;
 						}
 						remove(panelX0);
-						DBadapter.deleteItemBisognoRisorsa(false, nome.toString().split("-")[0]);
+						DBadapter.deleteItemBisognoRisorsa(false, nome.toString().split("-")[0]); //$NON-NLS-1$
 						JPanelAnagrafica.setJLists(JPanelAnagrafica.AGGIORNA, !JPanelAnagrafica.RICERCA_BISOGNI);
 					}
 					createJPanelJLists();
@@ -174,14 +174,14 @@ public class JPanelBisogniRisorse extends JPanel{
 						nome=((CheckListItem)JListBisogni.getSelectedValue());
 						if (nome==null) return;
 						remove(panelX0);
-						DBadapter.updateItemBisognoRisorsa(true, txtNome.getText(), nome.toString().split("-")[0]);
+						DBadapter.updateItemBisognoRisorsa(true, txtNome.getText(), nome.toString().split("-")[0]); //$NON-NLS-1$
 						JPanelAnagrafica.setJLists(JPanelAnagrafica.AGGIORNA, JPanelAnagrafica.RICERCA_BISOGNI);
 					}
 					else {
 						nome=((CheckListItem)JListRisorse.getSelectedValue());
 						if (nome==null) return;
 						remove(panelX0);
-						DBadapter.updateItemBisognoRisorsa(false, txtNome.getText(), nome.toString().split("-")[0]);
+						DBadapter.updateItemBisognoRisorsa(false, txtNome.getText(), nome.toString().split("-")[0]); //$NON-NLS-1$
 						JPanelAnagrafica.setJLists(JPanelAnagrafica.AGGIORNA, !JPanelAnagrafica.RICERCA_BISOGNI);
 					}
 					createJPanelJLists();

@@ -56,10 +56,10 @@ public class JPanelRisorseSoddisf extends JPanel{
 	JPanel panelX2 = new JPanel();
 	panelX2.setLayout(new BoxLayout(panelX2,BoxLayout.X_AXIS));
 	
-	panelX2.add(bGenera=new JButton("Genera elenco",new ImageIcon("images/pulsanti/PageSetup24.gif")));
+	panelX2.add(bGenera=new JButton(Messages.getString("JPanelRisorseSoddisf.0"),new ImageIcon("images/pulsanti/PageSetup24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	bGenera.addActionListener(actionListenerbGenera);
 	panelX2.add(Box.createHorizontalStrut(10));
-	panelX2.add(bStampa=new JButton("Stampa elenco",new ImageIcon("images/pulsanti/Print24.gif")));
+	panelX2.add(bStampa=new JButton(Messages.getString("JPanelRisorseSoddisf.2"),new ImageIcon("images/pulsanti/Print24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	bStampa.addActionListener(actionListenerbStampa);
 	panelX2.add(Box.createHorizontalStrut(10));
 	add(panelX2);
@@ -82,7 +82,7 @@ public class JPanelRisorseSoddisf extends JPanel{
 	
   	scroll= new JScrollPane(txtElenco = new JTextArea());
   	scroll.setBorder(BorderFactory.createTitledBorder(border4,
-  			"Risorse soddisfacenti la persona selezionata:",TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174))); 
+  			Messages.getString("JPanelRisorseSoddisf.4"),TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174)));  //$NON-NLS-1$ //$NON-NLS-2$
   	txtElenco.setFont(new Font(null,Font.PLAIN,16));
   	txtElenco.setBorder( new EmptyBorder(5,5,5,5));
   	txtElenco.setLineWrap(true);
@@ -103,9 +103,9 @@ public class JPanelRisorseSoddisf extends JPanel{
 	private void createPanelCombo(boolean aggiorna) {
 		panelX3 = new JPanel();
 		panelX3.setLayout(new BoxLayout(panelX3,BoxLayout.X_AXIS));
-		panelX3.add(new JLabel("Ricerca anagrafica:"));
+		panelX3.add(new JLabel(Messages.getString("JPanelRisorseSoddisf.1"))); //$NON-NLS-1$
 		panelX3.add(Box.createHorizontalStrut(10));
-		panelX3.add(comboAnagr = new JComboBox(DBadapter.getVectorAnagrafica(true,"")));
+		panelX3.add(comboAnagr = new JComboBox(DBadapter.getVectorAnagrafica(true,""))); //$NON-NLS-1$
 		comboAnagr.addActionListener(actionListenerComboSelect);
 		panelX3.add(Box.createHorizontalStrut(10));
 		if (aggiorna) 
@@ -139,7 +139,7 @@ public class JPanelRisorseSoddisf extends JPanel{
 		public void actionPerformed(ActionEvent e) {
 				String item =(String) comboAnagr.getSelectedItem();
 				StringBuilder sb = new StringBuilder(),sb1 = new StringBuilder(),sb2 = new StringBuilder();
-				if (item.equals("Tutti")){
+				if (item.equals(Messages.getString("JPanelRisorseSoddisf.8"))){ //$NON-NLS-1$
 					
 					for (int i=1;i<comboAnagr.getItemCount();i++){
 						item=(String)comboAnagr.getItemAt(i);
@@ -147,9 +147,9 @@ public class JPanelRisorseSoddisf extends JPanel{
 						sb  = new StringBuilder();
 						sb1 = new StringBuilder();
 					}
-					txtElenco.setText("RISORSE SODDISFACENTI I BISOGNI:\n"+ sb2);
+					txtElenco.setText(Messages.getString("JPanelRisorseSoddisf.9")+ sb2); //$NON-NLS-1$
 				} else {
-					txtElenco.setText("RISORSE SODDISFACENTI I BISOGNI:\n"+ getItemAnagrafica(item, sb, sb1));
+					txtElenco.setText(Messages.getString("JPanelRisorseSoddisf.10")+ getItemAnagrafica(item, sb, sb1)); //$NON-NLS-1$
 
 				}
 								
@@ -158,25 +158,25 @@ public class JPanelRisorseSoddisf extends JPanel{
 
 		private String getItemAnagrafica(String item, StringBuilder sb,
 				StringBuilder sb1) {
-			String ID = item.split("-")[0];
+			String ID = item.split("-")[0]; //$NON-NLS-1$
 			Vector<String> v = DBadapter.getBisogniPersona(ID);
-			sb.append("BISOGNI: ");
+			sb.append(Messages.getString("JPanelRisorseSoddisf.12")); //$NON-NLS-1$
 			for (String s:v) sb.append(s);
 
 			v = DBadapter.getVectorAnagrafica(
 					false, DBadapter.getIDRisorseSoddisf(ID));
 			
 			for (String s:v){
-				sb1.append("\n\t"+s+"\n\n");
-				if (s.equals("Risorse non trovate")) break;
-				sb1.append("\tRISORSE: ");
-				Vector<String> v1 = DBadapter.getRisorsePersona(s.split("-")[0]);
+				sb1.append("\n\t"+s+"\n\n"); //$NON-NLS-1$ //$NON-NLS-2$
+				if (s.equals(Messages.getString("JPanelRisorseSoddisf.15"))) break; //$NON-NLS-1$
+				sb1.append(Messages.getString("JPanelRisorseSoddisf.16")); //$NON-NLS-1$
+				Vector<String> v1 = DBadapter.getRisorsePersona(s.split("-")[0]); //$NON-NLS-1$
 				for (String s1:v1)
 					sb1.append(s1);
 			}
-			return "\n"+item +"\n\n"+sb+
-						"\n-------------\n"+sb1+
-						"\n*************************************************************************************";
+			return "\n"+item +"\n\n"+sb+ //$NON-NLS-1$ //$NON-NLS-2$
+						"\n-------------\n"+sb1+ //$NON-NLS-1$
+						"\n*************************************************************************************"; //$NON-NLS-1$
 		}
 	};
 	

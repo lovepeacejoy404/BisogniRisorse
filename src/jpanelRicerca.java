@@ -45,36 +45,36 @@ public class jpanelRicerca extends JPanel {
     	
 	    	Border border4 = BorderFactory.createEtchedBorder(EtchedBorder.RAISED,new Color(87,0,174),new Color (255,255,255));
 		  	Border border = BorderFactory.createTitledBorder(border4,
-		  			"Ricerca:",TitledBorder.LEFT,TitledBorder.TOP,new Font("Verdana",Font.BOLD,12),new Color(87,0,174) );
+		  			Messages.getString("jpanelRicerca.0"),TitledBorder.LEFT,TitledBorder.TOP,new Font("Verdana",Font.BOLD,12),new Color(87,0,174) ); //$NON-NLS-1$ //$NON-NLS-2$
 		 	setBorder( border);
     		
-		add(new JLabel(new ImageIcon("images/pulsanti/frecciaSin.gif")));
-    	add(new JLabel(is_ricerca_bisogni?"Ricerca bisogni:":"Ricerca risorse:"));
+		add(new JLabel(new ImageIcon("images/pulsanti/frecciaSin.gif"))); //$NON-NLS-1$
+    	add(new JLabel(is_ricerca_bisogni?Messages.getString("jpanelRicerca.3"):Messages.getString("jpanelRicerca.4"))); //$NON-NLS-1$ //$NON-NLS-2$
 	 	add(Box.createHorizontalStrut(10));
 	  	  	
 	  	comboElenco = new JComboBox(is_ricerca_bisogni?DBadapter.getBisogni(true):DBadapter.getRisorse(true));
-	  	comboElenco.setToolTipText("Cliccare su questo menù a tendina per selezionare il bisogno o la risorsa da cercare");
+	  	comboElenco.setToolTipText(Messages.getString("jpanelRicerca.5")); //$NON-NLS-1$
 	  	add(comboElenco);
 	  	//comboElenco.setSelectedIndex(3);
 	  	comboElenco.addActionListener(new CercaAction());
 	  	
 	  	add(Box.createHorizontalStrut(10));
 	  		JButton buttonLicenza;
-	  		add(buttonLicenza=new JButton("Info e Guida",new ImageIcon("images/pulsanti/Help24.gif")));
+	  		add(buttonLicenza=new JButton(Messages.getString("jpanelRicerca.6"),new ImageIcon("images/pulsanti/Help24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	  		add(Box.createHorizontalStrut(10));
-	  		add(new JLabel(new ImageIcon("images/pulsanti/frecciaDes.gif")));
+	  		add(new JLabel(new ImageIcon("images/pulsanti/frecciaDes.gif"))); //$NON-NLS-1$
 	  		buttonLicenza.addActionListener(new ActionListener(){
 				public void actionPerformed (ActionEvent e) {
 					Object[] message = new Object[2];
-					message[0]="Questo software �� stato realizzato da Gianluca Crocivera. " 
+					message[0]=Messages.getString("jpanelRicerca.9")  //$NON-NLS-1$
 							;
 					JTextArea txtArea = new JTextArea();
 					txtArea.setText(
-							"SCOPO DEL SOFTWARE:"+
-							"\nLo scopo di questo lavoro �� quello di gestire clienti,scadenze e pagamenti di una palestra"+
-							"\nGUIDA ALL'UTILIZZO:"+
-							"\nPer cercare un cognome, un tipo di abbonamento, untipo di attivit�� cliccare sul men�� a tendina: \"La visualizzazione\" "+
-							"I clienti si selezionano cliccando direttamente sulla tabella"
+							Messages.getString("jpanelRicerca.10")+ //$NON-NLS-1$
+							Messages.getString("jpanelRicerca.11")+ //$NON-NLS-1$
+							Messages.getString("jpanelRicerca.12")+ //$NON-NLS-1$
+							Messages.getString("jpanelRicerca.13")+ //$NON-NLS-1$
+							Messages.getString("jpanelRicerca.14") //$NON-NLS-1$
 							);
 					txtArea.setWrapStyleWord(true);
 					txtArea.setLineWrap(true);
@@ -84,12 +84,12 @@ public class jpanelRicerca extends JPanel {
 					scroll.setPreferredSize(new Dimension(100,200));
 					message[1]= scroll;
 					String[] options = { 
-				 		    "Invia e-mail all'autore ","Annulla" 
+				 		    Messages.getString("jpanelRicerca.15"),Messages.getString("jpanelRicerca.16")  //$NON-NLS-1$ //$NON-NLS-2$
 				 		}; 
 					int result = JOptionPane.showOptionDialog( 
 							null,                             // the parent that the dialog blocks 
 							message,                                    // the dialog message array 
-							"Informazioni e guida", // the title of the dialog window 
+							Messages.getString("jpanelRicerca.17"), // the title of the dialog window  //$NON-NLS-1$
 							JOptionPane.DEFAULT_OPTION,                 // option type 
 							JOptionPane.INFORMATION_MESSAGE,            // message type 
 							null,                                       // optional icon, use null to use the default icon 
@@ -101,7 +101,7 @@ public class jpanelRicerca extends JPanel {
 						Desktop desktop=Desktop.getDesktop();
 						URI uriMailTo;
 						try {
-							uriMailTo = new URI("mailto", "cantor2640@gmail.com?subject=Software palestra", null);
+							uriMailTo = new URI("mailto", Messages.getString("jpanelRicerca.19"), null); //$NON-NLS-1$ //$NON-NLS-2$
 							desktop.mail(uriMailTo); 
 							
 						} catch (Exception e1) {
@@ -115,7 +115,7 @@ public class jpanelRicerca extends JPanel {
 
 				}
 	  		});
-	  		buttonLicenza.setToolTipText("Informazioni sull'autore e licenza");
+	  		buttonLicenza.setToolTipText(Messages.getString("jpanelRicerca.20")); //$NON-NLS-1$
 	  	
 	  	
     	
@@ -135,14 +135,14 @@ public class jpanelRicerca extends JPanel {
             	 
             	//JPanelAnagrafica.selectRadioButtonRicerca();
              	String item=(String)comboElenco.getSelectedItem();
-             	if (item.equals("Tutti"))
-             		JPanelAnagrafica.setTabella(JPanelAnagrafica.RICERCA_BISOGNI,true, "", "APP.ANAGRAFICA.COGNOME");
-             	else if (item.equals("Tutte"))
-             		JPanelAnagrafica.setTabella(!JPanelAnagrafica.RICERCA_BISOGNI,true, "", "APP.ANAGRAFICA.COGNOME");
+             	if (item.equals(Messages.getString("jpanelRicerca.21"))) //$NON-NLS-1$
+             		JPanelAnagrafica.setTabella(JPanelAnagrafica.RICERCA_BISOGNI,true, "", "APP.ANAGRAFICA.COGNOME"); //$NON-NLS-1$ //$NON-NLS-2$
+             	else if (item.equals(Messages.getString("jpanelRicerca.24"))) //$NON-NLS-1$
+             		JPanelAnagrafica.setTabella(!JPanelAnagrafica.RICERCA_BISOGNI,true, "", "APP.ANAGRAFICA.COGNOME"); //$NON-NLS-1$ //$NON-NLS-2$
              	else if (is_ricerca_bisogni)
-             		JPanelAnagrafica.setTabella(JPanelAnagrafica.RICERCA_BISOGNI,true, item.split("-")[0], "");
+             		JPanelAnagrafica.setTabella(JPanelAnagrafica.RICERCA_BISOGNI,true, item.split("-")[0], ""); //$NON-NLS-1$ //$NON-NLS-2$
              	else
-             		JPanelAnagrafica.setTabella(!JPanelAnagrafica.RICERCA_BISOGNI,true, item.split("-")[0], "");
+             		JPanelAnagrafica.setTabella(!JPanelAnagrafica.RICERCA_BISOGNI,true, item.split("-")[0], ""); //$NON-NLS-1$ //$NON-NLS-2$
              	
              }	catch (Exception ex) {System.out.println(ex.toString());}
        }

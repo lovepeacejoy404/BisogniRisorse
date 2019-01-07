@@ -94,13 +94,13 @@ public class JPanelAnagrafica extends JPanel{
 	JButton bNuovo,bCancella,buttonLicenza;
 	JPanel panelX2 = new JPanel();
 	panelX2.setLayout(new BoxLayout(panelX2,BoxLayout.X_AXIS));
-	panelX2.add(bNuovo=new JButton("Nuovo",new ImageIcon("images/pulsanti/New24.gif")));
+	panelX2.add(bNuovo=new JButton(Messages.getString("JPanelAnagrafica.0"),new ImageIcon("images/pulsanti/New24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	bNuovo.addActionListener(actionListenerbNuovo);	
 	panelX2.add(Box.createHorizontalStrut(10));
-	panelX2.add(bSalva=new JButton("Salva",new ImageIcon("images/pulsanti/Save24.gif")));
+	panelX2.add(bSalva=new JButton(Messages.getString("JPanelAnagrafica.2"),new ImageIcon("images/pulsanti/Save24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	bSalva.addActionListener(actionListenerbSalva);
 	panelX2.add(Box.createHorizontalStrut(10));
-	panelX2.add(bCancella=new JButton("Cancella",new ImageIcon("images/pulsanti/Delete24.gif")));
+	panelX2.add(bCancella=new JButton(Messages.getString("JPanelAnagrafica.4"),new ImageIcon("images/pulsanti/Delete24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	bCancella.addActionListener(actionListenerbCancella);
 	panelX2.add(Box.createHorizontalStrut(10));
 	
@@ -111,34 +111,34 @@ public class JPanelAnagrafica extends JPanel{
 	panelX3.setLayout(new BoxLayout(panelX3,BoxLayout.X_AXIS));
 	
 		
-	panelX3.add(new JLabel("Nome:"));
+	panelX3.add(new JLabel(Messages.getString("JPanelAnagrafica.6"))); //$NON-NLS-1$
 	panelX3.add(Box.createHorizontalStrut(10));
 	panelX3.add(txtID=new JTextField());
 	txtID.setVisible(false);
 	panelX3.add(txtNome=new FocusTextField());
 	
 	panelX3.add(Box.createHorizontalStrut(10));
-	panelX3.add(new JLabel("Cognome:"));
+	panelX3.add(new JLabel(Messages.getString("JPanelAnagrafica.7"))); //$NON-NLS-1$
 	panelX3.add(Box.createHorizontalStrut(10));
 	panelX3.add(txtCognome=new FocusTextField());
 	
 	panelX3.add(Box.createHorizontalStrut(10));
-	panelX3.add(new JLabel("Età:"));
+	panelX3.add(new JLabel(Messages.getString("JPanelAnagrafica.8"))); //$NON-NLS-1$
 	panelX3.add(Box.createHorizontalStrut(10));
 	panelX3.add(txtEta=new FocusTextField());
 	
 	panelX3.add(Box.createHorizontalStrut(10));
-	panelX3.add(new JLabel("Sesso:"));
+	panelX3.add(new JLabel(Messages.getString("JPanelAnagrafica.9"))); //$NON-NLS-1$
 	panelX3.add(Box.createHorizontalStrut(10));
 	panelX3.add(txtSesso=new FocusTextField());
 	
 	panelX3.add(Box.createHorizontalStrut(10));
-	panelX3.add(new JLabel("Professione:"));
+	panelX3.add(new JLabel(Messages.getString("JPanelAnagrafica.10"))); //$NON-NLS-1$
 	panelX3.add(Box.createHorizontalStrut(10));
 	panelX3.add(txtProfessione=new FocusTextField());
 	
 	panelX3.add(Box.createHorizontalStrut(10));
-	panelX3.add(new JLabel("Appartenenza:"));
+	panelX3.add(new JLabel(Messages.getString("JPanelAnagrafica.11"))); //$NON-NLS-1$
 	panelX3.add(Box.createHorizontalStrut(10));
 	panelX3.add(txtAppartenenza=new FocusTextField());
 	panelX3.add(Box.createHorizontalStrut(10));
@@ -154,37 +154,37 @@ public class JPanelAnagrafica extends JPanel{
 	panelX5.setLayout(new BoxLayout(panelX5,BoxLayout.X_AXIS));
 	
 	panelX5.add(Box.createHorizontalStrut(10));
-	panelX5.add(new JLabel("Indirizzo:"));
+	panelX5.add(new JLabel(Messages.getString("JPanelAnagrafica.12"))); //$NON-NLS-1$
 	panelX5.add(Box.createHorizontalStrut(10));
 	panelX5.add(txtIndirizzo=new FocusTextField());
 	panelX5.add(Box.createHorizontalStrut(10));
 	
 	panelX5.add(Box.createHorizontalStrut(10));
-	panelX5.add(new JLabel("Città:"));
+	panelX5.add(new JLabel(Messages.getString("JPanelAnagrafica.13"))); //$NON-NLS-1$
 	panelX5.add(Box.createHorizontalStrut(10));
 	panelX5.add(txtCitta=new FocusTextField());
 	panelX5.add(Box.createHorizontalStrut(10));
 	
 	panelX5.add(Box.createHorizontalStrut(10));
-	panelX5.add(new JLabel("Telefono:"));
+	panelX5.add(new JLabel(Messages.getString("JPanelAnagrafica.14"))); //$NON-NLS-1$
 	panelX5.add(Box.createHorizontalStrut(10));
 	panelX5.add(txtTelefono=new FocusTextField());
 	panelX5.add(Box.createHorizontalStrut(10));
 	
 	panelX5.add(Box.createHorizontalStrut(10));
-	panelX5.add(new JLabel("Cellulare:"));
+	panelX5.add(new JLabel(Messages.getString("JPanelAnagrafica.15"))); //$NON-NLS-1$
 	panelX5.add(Box.createHorizontalStrut(10));
 	panelX5.add(txtCellulare=new FocusTextField());
 	panelX5.add(Box.createHorizontalStrut(10));
 	
 	panelX5.add(Box.createHorizontalStrut(10));
-	panelX5.add(new JLabel("Email:"));
+	panelX5.add(new JLabel(Messages.getString("JPanelAnagrafica.16"))); //$NON-NLS-1$
 	panelX5.add(Box.createHorizontalStrut(10));
 	panelX5.add(txtEmail=new FocusTextField());
 	panelX5.add(Box.createHorizontalStrut(10));
 	
 	panelX5.add(Box.createHorizontalStrut(10));
-	panelX5.add(new JLabel("ID Risorse:"));
+	panelX5.add(new JLabel(Messages.getString("JPanelAnagrafica.17"))); //$NON-NLS-1$
 	panelX5.add(Box.createHorizontalStrut(10));
 	panelX5.add(txtIDRisorse=new FocusTextField());
 	panelX5.add(Box.createHorizontalStrut(10));
@@ -209,7 +209,7 @@ public class JPanelAnagrafica extends JPanel{
 	
   	scroll= new JScrollPane(txtNote = new JTextArea());
   	scroll.setBorder(BorderFactory.createTitledBorder(border4,
-  			"Note:",TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174))); 
+  			Messages.getString("JPanelAnagrafica.18"),TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174)));  //$NON-NLS-1$ //$NON-NLS-2$
   	txtNote.setFont(new Font(null,Font.PLAIN,16));
   	txtNote.setBorder( new EmptyBorder(5,5,5,5));
   	txtNote.setLineWrap(true);
@@ -237,7 +237,7 @@ public class JPanelAnagrafica extends JPanel{
 	panelY.add (Box.createVerticalStrut(10));
 	
 	tableColumnsName = DBadapter.getColumnsNameTable();
-	setTabella(RICERCA_BISOGNI,!AGGIORNA,"","APP.ANAGRAFICA.COGNOME");
+	setTabella(RICERCA_BISOGNI,!AGGIORNA,"","APP.ANAGRAFICA.COGNOME"); //$NON-NLS-1$ //$NON-NLS-2$
 	//panelY.add (Box.createVerticalStrut (10));
 	panelY.add (jsp=new JScrollPane(table));
   	jsp.getViewport().setBackground(new Color(255,245,215));
@@ -249,7 +249,7 @@ public class JPanelAnagrafica extends JPanel{
 	panelY.add(panelX15);
 	panelY.add (Box.createVerticalStrut(10));
 		
-	setTabella(!RICERCA_BISOGNI,!AGGIORNA,"","APP.ANAGRAFICA.COGNOME");
+	setTabella(!RICERCA_BISOGNI,!AGGIORNA,"","APP.ANAGRAFICA.COGNOME"); //$NON-NLS-1$ //$NON-NLS-2$
 	//panelY.add (Box.createVerticalStrut (10));
 	panelY.add (jsp1=new JScrollPane(table1));
   	jsp1.getViewport().setBackground(new Color(255,245,215));
@@ -264,16 +264,16 @@ public class JPanelAnagrafica extends JPanel{
 	panelX.setLayout(new BoxLayout(panelX,BoxLayout.Y_AXIS));
 	
 	panelX.setBorder(BorderFactory.createTitledBorder(border4,
-  			"Bisogni e Risorse dell'utente:",TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174))); 
+  			Messages.getString("JPanelAnagrafica.24"),TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174)));  //$NON-NLS-1$ //$NON-NLS-2$
 	
 	panelX.add(Box.createVerticalStrut(10));
-	panelX.add(new JLabel("Bisogni:"));
+	panelX.add(new JLabel(Messages.getString("JPanelAnagrafica.26"))); //$NON-NLS-1$
 	panelX.add(Box.createVerticalStrut(10));
 	setJLists(!AGGIORNA,RICERCA_BISOGNI);
 		
 	panelX.add(Box.createVerticalStrut(10));
 	
-	panelX.add(new JLabel("Risorse :"));
+	panelX.add(new JLabel(Messages.getString("JPanelAnagrafica.27"))); //$NON-NLS-1$
 	panelX.add(Box.createVerticalStrut(10));
 	setJLists(!AGGIORNA,!RICERCA_BISOGNI);
 	
@@ -453,7 +453,7 @@ public class JPanelAnagrafica extends JPanel{
 	 		for (String s:DBadapter.getAnagBisogni(txtID.getText()))
 	 			for (int i=0;i<lmBisogni.getSize();i++){
 	 				cli =(CheckListItem)lmBisogni.getElementAt(i);
-	 				if (cli.toString().split("-")[0].equals(s.split("-")[0])){
+	 				if (cli.toString().split("-")[0].equals(s.split("-")[0])){ //$NON-NLS-1$ //$NON-NLS-2$
 	 					
 	 					cli.setSelected(true);
 	 				}
@@ -464,7 +464,7 @@ public class JPanelAnagrafica extends JPanel{
 	 		for (String s:DBadapter.getAnagRisorse(txtID.getText()))
 	 			for (int i=0;i<lmRisorse.getSize();i++){
 	 				cli =(CheckListItem)lmRisorse.getElementAt(i);
-	 				if (cli.toString().split("-")[0].equals(s.split("-")[0]))
+	 				if (cli.toString().split("-")[0].equals(s.split("-")[0])) 
 	 					cli.setSelected(true);
 	 			}
 	 		
@@ -518,20 +518,20 @@ public class JPanelAnagrafica extends JPanel{
 	 ActionListener actionListenerbNuovo =new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
 				isNuova=true;
-				txtID.setText("");
+				txtID.setText(""); //$NON-NLS-1$
 		 		//txtID.setText(Long.toString(rs.getLong("APP.BISOGNI.ID")));
-		 		txtNome.setText("");
-		 		txtCognome.setText("");
-		 		txtEta.setText("");
-		 		txtProfessione.setText("");
-		 		txtAppartenenza.setText("");
-		 		txtIndirizzo.setText("");
-		 		txtCitta.setText("");
-		 		txtTelefono.setText("");
-		 		txtCellulare.setText("");
-		 		txtEmail.setText("");
-		 		txtNote.setText("");//null
-		 		txtIDRisorse.setText("");//null
+		 		txtNome.setText(""); //$NON-NLS-1$
+		 		txtCognome.setText(""); //$NON-NLS-1$
+		 		txtEta.setText(""); //$NON-NLS-1$
+		 		txtProfessione.setText(""); //$NON-NLS-1$
+		 		txtAppartenenza.setText(""); //$NON-NLS-1$
+		 		txtIndirizzo.setText(""); //$NON-NLS-1$
+		 		txtCitta.setText(""); //$NON-NLS-1$
+		 		txtTelefono.setText(""); //$NON-NLS-1$
+		 		txtCellulare.setText(""); //$NON-NLS-1$
+		 		txtEmail.setText(""); //$NON-NLS-1$
+		 		txtNote.setText("");//null //$NON-NLS-1$
+		 		txtIDRisorse.setText("");//null //$NON-NLS-1$
 		 		
 		 		//refreshLists();
 		 		uncheckedLists();
@@ -541,12 +541,12 @@ public class JPanelAnagrafica extends JPanel{
 		
 		ActionListener actionListenerbCancella =new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
-				int result =JOptionPane.showConfirmDialog(null,"Sei sicuro di volere cancellare il record selezionato?");
+				int result =JOptionPane.showConfirmDialog(null,Messages.getString("JPanelAnagrafica.45")); //$NON-NLS-1$
 				if (result==JOptionPane.YES_OPTION) {
 					
 					String ID= (String)table.getValueAt(table.getSelectedRow(), 0);
 					DBadapter.deleteItemAnagrafica(ID);
-					setTabella(RICERCA_BISOGNI,AGGIORNA,"","APP.ANAGRAFICA.COGNOME");
+					setTabella(RICERCA_BISOGNI,AGGIORNA,"","APP.ANAGRAFICA.COGNOME"); //$NON-NLS-1$ //$NON-NLS-2$
 				}
 			}
 		};
@@ -562,7 +562,7 @@ public class JPanelAnagrafica extends JPanel{
 		 			cli =(CheckListItem)lmodel.getElementAt(i);
 		 			if (cli.isSelected()){
 		 				
-		 				listIDBisogni.add(Integer.parseInt(cli.toString().split("-")[0]));
+		 				listIDBisogni.add(Integer.parseInt(cli.toString().split("-")[0])); //$NON-NLS-1$
 		 			}
 		 				
 		 		}
@@ -571,7 +571,7 @@ public class JPanelAnagrafica extends JPanel{
 		 		for (int i=0;i<lmodel1.getSize();i++){
 		 			cli =(CheckListItem)lmodel1.getElementAt(i);
 		 			if (cli.isSelected()){
-		 				listIDRisorse.add(Integer.parseInt(cli.toString().split("-")[0]));
+		 				listIDRisorse.add(Integer.parseInt(cli.toString().split("-")[0])); //$NON-NLS-1$
 		 			}
 		 				
 		 		}
@@ -598,8 +598,8 @@ public class JPanelAnagrafica extends JPanel{
 								txtEmail.getText(), txtNote.getText(), txtIDRisorse.getText(), listIDRisorse, listIDBisogni);
 						
 					}
-					setTabella(RICERCA_BISOGNI,AGGIORNA,"","APP.ANAGRAFICA.COGNOME");
-					setTabella(!RICERCA_BISOGNI,AGGIORNA,"","APP.ANAGRAFICA.COGNOME");
+					setTabella(RICERCA_BISOGNI,AGGIORNA,"","APP.ANAGRAFICA.COGNOME"); //$NON-NLS-1$ //$NON-NLS-2$
+					setTabella(!RICERCA_BISOGNI,AGGIORNA,"","APP.ANAGRAFICA.COGNOME"); //$NON-NLS-1$ //$NON-NLS-2$
 					JPanelRisorseSoddisf.updateCombo();
 
 			}

@@ -40,20 +40,20 @@ public class JPanelImporta extends JPanel{
 	JButton bImporta,bBisogni,bRisorse,bElenco;
 	JPanel panelX2 = new JPanel();
 	panelX2.setLayout(new BoxLayout(panelX2,BoxLayout.X_AXIS));
-	panelX2.add(bImporta=new JButton("Importa Anagrafica da LibreOffice Base",new ImageIcon("images/pulsanti/PageSetup24.gif")));
+	panelX2.add(bImporta=new JButton(Messages.getString("JPanelImporta.0"),new ImageIcon("images/pulsanti/PageSetup24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	bImporta.addActionListener(actionListenerbImporta);
 	panelX2.add(Box.createHorizontalStrut(10));
 	
-	panelX2.add(bBisogni=new JButton("Conta Bisogni",new ImageIcon("images/pulsanti/PageSetup24.gif")));
+	panelX2.add(bBisogni=new JButton(Messages.getString("JPanelImporta.2"),new ImageIcon("images/pulsanti/PageSetup24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	bBisogni.addActionListener(actionListenerbEsportaBisogni);
 	panelX2.add(Box.createHorizontalStrut(10));
 	
-	panelX2.add(bRisorse=new JButton("Conta Risorse",new ImageIcon("images/pulsanti/PageSetup24.gif")));
+	panelX2.add(bRisorse=new JButton(Messages.getString("JPanelImporta.4"),new ImageIcon("images/pulsanti/PageSetup24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	bRisorse.addActionListener(actionListenerbEsportaRisorse);
 	panelX2.add(Box.createHorizontalStrut(10));
 	
 	
-	panelX2.add(bElenco=new JButton("Elenco anagrafica",new ImageIcon("images/pulsanti/PageSetup24.gif")));
+	panelX2.add(bElenco=new JButton(Messages.getString("JPanelImporta.6"),new ImageIcon("images/pulsanti/PageSetup24.gif"))); //$NON-NLS-1$ //$NON-NLS-2$
 	bElenco.addActionListener(actionListenerbElenco);
 	panelX2.add(Box.createHorizontalStrut(10));
 	
@@ -77,7 +77,7 @@ public class JPanelImporta extends JPanel{
 	
   	scroll= new JScrollPane(txtCsv = new JTextArea());
   	scroll.setBorder(BorderFactory.createTitledBorder(border4,
-  			"File csv da importare:",TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174))); 
+  			Messages.getString("JPanelImporta.8"),TitledBorder.LEFT,TitledBorder.TOP,Font.getFont("Arial"),new Color(87,0,174)));  //$NON-NLS-1$ //$NON-NLS-2$
   	txtCsv.setFont(new Font(null,Font.PLAIN,16));
   	txtCsv.setBorder( new EmptyBorder(5,5,5,5));
   	txtCsv.setLineWrap(true);
@@ -100,12 +100,12 @@ public class JPanelImporta extends JPanel{
 		public void actionPerformed(ActionEvent e) {
 			try {	
 			String csv = txtCsv.getText();
-			txtCsv.setText(txtCsv.getText()+"\n\n");
-			for (String line :csv.split("\n")){
-				String a[]=line.split(",");
+			txtCsv.setText(txtCsv.getText()+"\n\n"); //$NON-NLS-1$
+			for (String line :csv.split("\n")){ //$NON-NLS-1$
+				String a[]=line.split(","); //$NON-NLS-1$
 				//DBadapter.createItemAnagrafica(nome, cognome, eta, sesso, professione, appartenenza, indirizzo, citta, telefono, cellulare, email, note, id_risorse_soddisf, id_risorse, id_bisogni)
-				DBadapter.createItemAnagrafica(a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10],a[11], "Non trovate", new ArrayList<Integer>(), new ArrayList<Integer>());
-				txtCsv.setText(txtCsv.getText()+"\n"+line +"Importata!");
+				DBadapter.createItemAnagrafica(a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10],a[11], Messages.getString("JPanelImporta.13"), new ArrayList<Integer>(), new ArrayList<Integer>()); //$NON-NLS-1$
+				txtCsv.setText(txtCsv.getText()+"\n"+line +Messages.getString("JPanelImporta.15")); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			} catch (Exception ex)	{
 				ex.printStackTrace();
@@ -117,9 +117,9 @@ public class JPanelImporta extends JPanel{
 	ActionListener actionListenerbEsportaBisogni =new ActionListener () {
 		public void actionPerformed(ActionEvent e) {
 			StringBuilder sb = new StringBuilder();	
-			sb.append("Bisogno#Numero Persone\n");
+			sb.append("Bisogno#Numero Persone\n"); //$NON-NLS-1$
 			for (String s: DBadapter.getVectorCount(JPanelAnagrafica.RICERCA_BISOGNI))
-				sb.append(s.substring(0, s.length()-1)+"\n");
+				sb.append(s.substring(0, s.length()-1)+"\n"); //$NON-NLS-1$
 			txtCsv.setText(sb.toString());
 			createFileCsv(sb.toString());	
 
@@ -129,9 +129,9 @@ public class JPanelImporta extends JPanel{
 	ActionListener actionListenerbEsportaRisorse =new ActionListener () {
 		public void actionPerformed(ActionEvent e) {
 			StringBuilder sb = new StringBuilder();	
-			sb.append("Risorsa#Numero Persone\n");
+			sb.append("Risorsa#Numero Persone\n"); //$NON-NLS-1$
 			for (String s: DBadapter.getVectorCount(!JPanelAnagrafica.RICERCA_BISOGNI))
-				sb.append(s.substring(0, s.length()-1)+"\n");
+				sb.append(s.substring(0, s.length()-1)+"\n"); //$NON-NLS-1$
 			txtCsv.setText(sb.toString());
 			createFileCsv(sb.toString());	
 
@@ -142,15 +142,15 @@ public class JPanelImporta extends JPanel{
 		public void actionPerformed(ActionEvent e) {
 			StringBuilder sb = new StringBuilder();	
 			String ID=null;
-			sb.append("ID#Eta#Sesso#Professione#Bisogni#Risorse\n");
+			sb.append("ID#Eta#Sesso#Professione#Bisogni#Risorse\n"); //$NON-NLS-1$
 			
 			for (String s: DBadapter.getVectorAnagrafica(true)){
 				sb.append(s);
-				ID=s.split("#")[0];
+				ID=s.split("#")[0]; //$NON-NLS-1$
 				sb.append(DBadapter.getBisogniPersona(ID));
-				sb.append("#");
+				sb.append("#"); //$NON-NLS-1$
 				sb.append(DBadapter.getRisorsePersona(ID));
-				sb.append("\n");
+				sb.append("\n"); //$NON-NLS-1$
 			}
 				
 			
@@ -162,7 +162,7 @@ public class JPanelImporta extends JPanel{
 	
 	
 	private void createFileCsv(String csv){
-		 File file = new File("files/file.csv");
+		 File file = new File("files/file.csv"); //$NON-NLS-1$
 
 	        PrintWriter printWriter = null;
 
