@@ -11,6 +11,6 @@ whoever is well might look for a person to be assisted.
 The program allows you to search for both needs and resources.
 If you find a resource that can satisfy a need, then the resource ID can be registered in the user's "Resource ID" text box.
 
-<a href="http://it.tinypic.com?ref=15hekxf" target="_blank"><img src="http://i67.tinypic.com/15hekxf.png" border="0" alt="Image and video hosting by TinyPic"></a>
+<a href="http://it.tinypic.com?ref=hvntrn" target="_blank"><img src="http://i63.tinypic.com/hvntrn.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
 The program is in English and Italian.
