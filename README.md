@@ -1,16 +1,18 @@
 # BisogniRisorse
-Program in Java Swing with Derby database to manage people's needs and resources
+Programma in Java Swing con database Derby per gestire i bisogni e le risorse o disponibilità delle persone
 
-Every person has both needs and resources. This program aims to connect people's needs and resources.
+Ogni persona ha sia bisogni che risorse. Questo programma mira a collegare i bisogni e le risorse o disponibilità delle persone.
 
-If a person is alone, he could look for company and vice versa. 
-If a person is hungry, he may look for someone who feeds her.
-If a person is sick, he may be looking for someone to assist him and vice-versa 
-whoever is well might look for a person to be assisted. 
+Se una persona è sola, potrebbe cercare compagnia e viceversa.
+Se una persona ha fame, può cercare qualcuno che la nutra.
+Se una persona è malata, potrebbe cercare qualcuno che lo assista e viceversa
+chi sta bene potrebbe cercare una persona da assistere.
 
-The program allows you to search for both needs and resources.
-If you find a resource that can satisfy a need, then the resource ID can be registered in the user's "Resource ID" text box.
+Il programma consente di cercare sia i bisogni che le risorse.
+Se trovi una risorsa in grado di soddisfare un bisogno, l'ID risorsa può essere registrato nella casella di testo "ID risorsa" dell'utente.
 
-<a href="http://it.tinypic.com?ref=hvntrn" target="_blank"><img src="http://i63.tinypic.com/hvntrn.png" border="0" alt="Image and video hosting by TinyPic"></a>
+<img src="images/schermata.png" border="0" alt ="Schermata programma">
 
-The program is in English and Italian.
+Il programma è in inglese e italiano.
+
+Per avviare il programma dopo averlo scaricato e installato Java, vai nella dir pacchetto, entra nel terminale e digita "java -jar RilevazioneDati.jar" , digita la password timase e prova il software.
